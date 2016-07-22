@@ -1,0 +1,54 @@
+$pink: #c72059;
+$red: #c50000;
+$grey: #f8f8f8;
+li.search-group {
+  border: none !important;
+}
+.input-group input.form-control {
+  border-radius: 0px;
+}
+.input-group button.btn {
+  border-radius: 0px;
+}
+nav.mobile-navbar div > ul {
+  border: 1px solid #ddd;
+}
+nav.mobile-navbar ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.btn.btn-menu{
+  background-color: #111;
+  width: 100%;
+  color: #fff;
+  font-size: 22px;
+}
+.btn.btn-dropdown{
+  width: 100%;
+  background-color: $red;
+  color: #fff;
+  border-radius: 0px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.material-icons{
+  vertical-align: middle;
+}
+nav.mobile-navbar ul h2{
+  font-family: "Pacifico",cursive;
+  padding: 0px 0px 10px 0px;
+  margin: 0;
+  font-size: 25px;
+}
+nav.mobile-navbar ul li {
+  border: 1px solid #ddd;
+}
+nav.mobile-navbar ul ul li{
+  padding: 10px;
+  &:hover {
+    background-color: darken($grey,15%);
+    color: #333;
+    font-weight: bold;
+  }
+}
