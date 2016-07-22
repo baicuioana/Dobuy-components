@@ -1,0 +1,225 @@
+.menu {
+	background:
+	linear-gradient(135deg, #fff 25%, transparent 25%) -50px 0,
+	linear-gradient(225deg, #000 25%, transparent 25%) -50px 0,
+	linear-gradient(315deg, #fff 25%, transparent 25%),
+	linear-gradient(45deg, #000 25%, transparent 25%);
+	background-size: 15px 120px;
+	background-color: #DC2563;
+	border-bottom: 3px solid #333 !important;
+	margin-bottom: 10px;
+	padding: 27px !important;
+}
+.nav-menu {
+	margin-top:15px;
+	list-style: none;
+	height: 40px;
+}
+.nav-menu > li {
+	display: inline-block !important;
+	line-height: 30px;
+}
+.brand a{
+	text-decoration: none;
+	color: #333;
+}
+.brand a img {
+	margin-top: -16px;
+}
+.brand:hover a {
+	text-decoration:none;
+}
+.nav-title {
+	cursor: pointer;
+	font-size: 1.5vw;
+	text-decoration: none;
+	text-align: center;
+	margin: 0;
+	color: #FFF;
+}
+
+.nav-right {
+	text-align: right;
+	height: 35px;
+}
+
+.nav-right > li{
+	vertical-align: middle;
+}
+
+.menu-cart,.categories,.profile{
+	color: #fff;
+	font-family: 'Suez One', serif;
+	text-decoration:none;
+}
+.wishlist a{
+	color: #fff;
+	font-family: cursive;
+	text-decoration:none;
+}
+.menu-cart .nav-title{
+	line-height: 35px;
+	color: #fff;
+}
+.menu-cart:hover .nav-title {
+	color: #fff;
+}
+.nav-dropdown {
+	text-align: center !important;
+}
+.nav-dropdown:hover .nav-title {
+	color: #fff;
+	font-weight: bold;
+}
+.nav-dropdown ul{
+	width: 80%;
+	list-style: none;
+	text-align: center;
+	color: #fff;
+	border-left: 2px solid #f8f8f8;
+	border-right: 1px solid #f8f8f8;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	z-index: 999;
+	position: absolute;
+	padding: 0px !important;
+	background-color: #DC2563;
+}
+.nav-dropdown ul li {
+	padding: 5px 20px !important;
+	color: #fff;
+	border: none;
+	border-bottom: 2px solid #f8f8f8;
+}
+.nav-dropdown ul li:hover {
+	font-size: 120%;
+	font-weight: bold;
+}
+.nav-dropdown ul a{
+	text-decoration: none;
+	color: #333;
+}
+.menu-cart {
+	height: 35px;
+	text-align: center;
+}
+.menu-cart .nav-title{
+	padding: 0 20px;
+}
+.menu-cart:hover .nav-title {
+	border-radius: 5px;
+}
+.menu-cart:hover a{
+	text-decoration: none;
+}
+.menu-dropdown {
+	padding: 10px;
+	background-color: #fff;
+	z-index: 999;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	list-style: none;
+}
+.menu-cart .menu-dropdown{
+	position:absolute;
+	right: 0;
+	top: 35px;
+}
+.menu-dropdown li{
+	display:block;
+}
+.search {
+	padding: 0px;
+}
+
+.search .form-control {
+	padding: 0;
+	margin: 0;
+}
+
+.search input {
+	float: right;
+	background-color: transparent;
+	border:none;
+	border-bottom: 1px solid #fff;
+	color: #fff;
+	height: 35px;
+	box-shadow: none;
+	-webkit-transition: 1s all ease-in-out;
+	-o-transition: 1s all ease-in-out;
+	transition: 1s all ease-in-out;
+	width: 0px;
+}
+
+.focus input {
+		padding: 0px;
+		margin: 0px;
+		-webkit-transition: 1s all ease-in-out;
+		-o-transition: 1s all ease-in-out;
+		transition: 1s all ease-in-out;
+		width: 100% !important;
+}
+
+.right button,
+.right button:focus{
+	border-radius: 0px;
+	border: none !important;
+	box-shadow: none !important;
+	padding: 2px 6px;
+	height: 35px;
+	background-color: transparent;
+	color: #f8f8f8;
+}
+
+.right a:focus {
+	border: none;
+	box-shadow: none;
+}
+
+.list {
+	color: #fff;
+	background-color: #DC2563;
+	border-left: 2px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	width: 100%;
+	max-height: 150px;
+	overflow: auto;
+	position: absolute !important;
+	z-index: 999;
+}
+.list > p {
+	background-color: #f8f8f8;
+	color: #666;
+	padding: 5px;
+	margin: 0px;
+	font-size: 1.2vw;
+	/*font-weight: bold;*/
+}
+.list li {
+	margin: 0px;
+	border-bottom: 1px solid #f8f8f8;
+	text-align: center;
+}
+.list a {
+	margin: 0px;
+	color: #fff;
+	text-decoration: none;
+}
+.list a:hover,
+.list a:focus,
+.list a:active {
+	background-color: #F26896;
+	color: #333;
+	font-weight: bold;
+}
+
+.checkout div p{
+	color: #333 !important;
+}
+.total {
+	background-color: #333;
+	margin-top: -35px;
+	margin-left: -5px;
+}

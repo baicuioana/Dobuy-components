@@ -1,0 +1,139 @@
+    <nav class="menu hidden-xs hidden-sm">
+        <div class="container-fluid">
+            <ul class="nav-menu">
+                <div class="col-sm-7">
+                    <li class="brand col-sm-7">
+                        <a [routerLink]="['/']">
+                            <img src="/img/navbar/dobuy-logo2.png">
+                        </a>
+                    </li>
+                    <li class="col-sm-5 search pull-right"
+                        [ngClass]="{'focus':searchFocus}"
+                        (keyup)="searchProduct.length > 0 ? searchList = true : searchList = false;"
+                        (mouseover)="searchFocus = true"
+                        (mouseleave)="searchList = false;searchFocus = false"
+                    >
+                        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+                            <div class="input-group">
+                              <input placeholder="Busca .."
+                                     type="text"
+                                     [(ngModel)]="searchProduct"
+                                     class="form-control"
+                                     >
+                              <span class="input-group-btn right">
+                                <a>
+                                    <button type="submit"><i class="material-icons">search</i></button>
+                                </a>
+                              </span>
+                            </div><!-- /input-group -->
+                        </form>
+                        <ul class="list nav nav-pills nav-stacked" [hidden]="!searchList">
+                            <p class="text-center"><b>Resultados</b></p>
+                            <li class="presentation">
+                                <a [routerLink]="['/listar/productos/caca']"
+                                class="capitalize"> caca</a>
+                                <a [routerLink]="['/listar/productos/caca2']"
+                                class="capitalize"> caca2</a>
+                                <a [routerLink]="['/listar/productos/caca3']"
+                                class="capitalize"> caca3</a>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="col-md-5 nav-right pull-right">
+                    <li class="categories col-md-4"
+                        (mouseover)="isOpen.categories = true;"
+                        (click)="isOpen.categories = !isOpen.categories"
+                        (mouseleave)="isOpen.categories = false">
+                        <div>
+                            <p [hidden]="isOpen.categories" class="nav-title">CATEGORIAS</p>
+                            <ul class="list nav nav-pills nav-stacked" [hidden]="!isOpen.categories">
+                                <p class="text-center"><b>CATEGORIAS</b></p>
+                                <li class="presentation" *ngFor="let item of categories">
+                                    <a [routerLink]="['/listar/productos/'+item.name]"
+                                    class="capitalize"> {{item.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="profile col-md-4"
+                        (mouseover)="isOpen.profile = true;"
+                        (click)="isOpen.profile = !isOpen.profile"
+                        (mouseleave)="isOpen.profile = false">
+                        <div [hidden]="logged_in">
+                            <p [hidden]="isOpen.profile" class="nav-title">MI CUENTA</p>
+                            <ul class="list nav nav-pills nav-stacked" [hidden]="!isOpen.profile">
+                                <p class="text-center"><b>MI CUENTA</b></p>
+                                <li class="presentation">
+                                  <a href="" (click)="auth.login()" *ngIf="!auth.authenticated()"><li>Acceder</li></a>
+                                  <a href="" (click)="auth.logout()" *ngIf="auth.authenticated()"><li>Salir</li></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="menu-cart col-md-4"
+                        (mouseover)="isOpen.menuCart = true;"
+                        (click)="isOpen.menuCart = !isOpen.menuCart"
+                        (mouseleave)="isOpen.menuCart = false">
+                        <a [routerLink]="['/carrito']" class="nav-title pull-right">
+                          <i class="material-icons">shopping_cart</i>&nbsp;
+                          <span class="badge total">{{subtotal||"0"}}</span>
+                        </a>
+
+                        <ul class="menu-dropdown" [hidden]="!isOpen.menuCart">
+                            <!-- cart -->
+                            <li>
+                                <div class="mycart-container" >
+                                    <div class="col-md-12" >
+                                        <table class="table">
+                                            <thead>
+                                            <tr class="headerRow">
+                                                <th class="item-id col-md-4">Id</th>
+                                                <th class="item-style col-md-4">Tipo</th>
+                                                <th class="item-color col-md-2 text-left">Color</th>
+                                                <th class="item-size col-md-2">Talla</th>
+                                                <th class="item-price col-md-2 text-center">Precio</th>
+                                                <th class="item-remove col-md-2"></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+
+                                            <tr ng-repeat="item in cart_products">
+                                                <td class="item-id text-left" ng-bind="item.pk"></td>
+                                                <td class="item-style text-left" ng-bind="item.style"></td>
+                                                <td class="item-color text-left">
+                                                    <li style="list-style:none;width:20px;height:20px;background-color:[[item.color]];border:1px solid #000;"></li>
+                                                </td>
+                                                <td class="item-size text-left" ng-bind="item.size"></td>
+                                                <td class="item-price"><span ng-bind="item.price"></span>&euro;</td>
+                                                <td class="item-remove text-right">
+                                                <button (click)="removeItem('cart',item.cart_pk)" class="btn btn-pink block btn-xs">Eliminar</button>
+                                                </td>
+                                            </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row checkout">
+                                    <div class="col-sm-6 pull-right">
+                                        <a href="/paga/">
+                                          <span>Total:</span>
+                                          <span class="total">{{ subtotal }}</span>
+                                          <span>&euro;</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+    <!--                 <li class="nav-title wishlist hidden-md">
+                        <a href="/#!/lista-de-deseos/">
+                            <span ng-bind="wlItems"></span><i class="material-icons">favorite</i>
+                        </a>
+                    </li> -->
+                    <!-- end cart -->
+                </div>
+            </ul>
+        </div>
+    </nav>
